@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import List from "./Components/List";
 const axios = require("axios");
 
 const filmsUrl = "http://localhost:4000/films";
@@ -37,6 +38,7 @@ class App extends Component {
           return film;
         });
         this.setState({ listOfFilms: ghibliFilms });
+        console.log(this.state.listOfFilms);
       });
       /*
        *  setState of listOfPeople to data from peopleUrl
@@ -53,29 +55,54 @@ class App extends Component {
           return people;
         });
         this.setState({ listOfPeople: ghibliPeople });
-        console.log(this.state.listOfPeople);
+        console.log("got people");
       });
       /*
        *  setState of listOfLocations to data from locationsUrl
        */
       await axios.get(locationsUrl).then(res => {
-        let locationUrlJson = JSON.stringify(res);
+        let locationUrlData = res;
+        const ghibliLocations = locationUrlData.data.map(item => {
+          const location = {};
+          location.id = item.id;
+          location.name = item.name;
+          location.climate = item.climate;
+          location.terrain = item.terrain;
+          location.films = item.films;
+          location.ulr = item.url;
+          return location;
+        });
+        this.setState({ listOfLocations: ghibliLocations });
         console.log("got locations");
       });
     };
 
-    getAllData().then(() => {});
+    getAllData();
   }
   render() {
+    let filmTitle = this.state.listOfFilms[1];
+    console.log(filmTitle);
+    if (this.state.listOfFilms) {
+      return (
+        <div>
+          <header className="app-header">
+            <h1 className="app-text">GHIBLI API HEADER</h1>
+          </header>
+
+          <ul className="list-group">
+            <List {...filmTitle} />
+          </ul>
+
+          <footer className="app-footer">
+            <h1 className="app-text">GHIBLI API FOOTER</h1>
+          </footer>
+        </div>
+      );
+    }
+
     return (
       <div>
-        <header className="app-header">
-          <h1 className="app-text">GHIBLI API HEADER</h1>
-        </header>
-        <ul className="list-group"></ul>
-        <footer className="app-footer">
-          <h1 className="app-text">GHIBLI API FOOTER</h1>
-        </footer>
+        <h1>Loading...</h1>
       </div>
     );
   }
