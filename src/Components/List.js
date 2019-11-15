@@ -6,12 +6,10 @@ class List extends Component {
     super(props);
     console.log(this.props);
     this.state = {
-      didMouseClick: false,
       isHover: false
     };
 
     this.isMouseHover = this.isMouseHover.bind(this);
-    this.onMouseClick = this.onMouseClick.bind(this);
   }
 
   isMouseHover = () => {
@@ -21,10 +19,6 @@ class List extends Component {
     if (this.state.isHover) {
       this.setState({ isHover: false });
     }
-  };
-
-  onMouseClick = () => {
-    console.log("hello");
   };
 
   render() {

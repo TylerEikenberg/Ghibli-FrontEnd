@@ -32,6 +32,10 @@ class InfoBox extends Component {
             })}
           </ul>
         </div>
+        <div className="ghibli-detail-container">
+          <h1>{this.state.data.title}</h1>
+          <p>{this.state.data.description}</p>
+        </div>
       </div>
     );
   }
