@@ -5,10 +5,12 @@ class List extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      didMouseClick: false,
       isHover: false
     };
 
     this.isMouseHover = this.isMouseHover.bind(this);
+    this.onMouseClick = this.onMouseClick.bind(this);
   }
 
   isMouseHover = () => {
@@ -20,6 +22,10 @@ class List extends Component {
     }
   };
 
+  onMouseClick = () => {
+    console.log("hello");
+  };
+
   render() {
     const activeClass = this.state.isHover
       ? "list-group-item active"
@@ -29,6 +35,7 @@ class List extends Component {
         className={activeClass}
         onMouseEnter={this.isMouseHover}
         onMouseLeave={this.isMouseHover}
+        onMouseDown={this.onMouseClick}
       >
         {this.props.name || this.props.title}
       </li>

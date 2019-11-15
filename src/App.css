@@ -28,6 +28,10 @@
 
 .main-window{
   position: relative;
+  height: 1000px;
+  width: 100%;
+  background-image: url("./assets/ghiblibg1.jpg");
+  background-size: cover;
 }
 .film-list{
   margin-top: 50px;

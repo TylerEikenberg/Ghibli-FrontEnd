@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import List from "./Components/List";
+import InfoBox from "./Components/InfoBox/InfoBox";
 const axios = require("axios");
 
 const filmsUrl = "http://localhost:4000/films";
@@ -85,8 +86,6 @@ class App extends Component {
    * LOOP THROUGH FILMS AND CREATE LIST ITEM OF EACH ONE
    */
   render() {
-    let filmTitle = this.state.listOfFilms[1];
-    console.log(typeof this.state.listOfFilms);
     if (this.state.listOfFilms) {
       return (
         <div>
@@ -97,13 +96,7 @@ class App extends Component {
           </div>
 
           <div className="main-window">
-            <div className="film-list">
-              <ul className="list-group position-absolute">
-                {this.state.listOfFilms.map(item => {
-                  return <List key={item.id} {...item} />;
-                })}
-              </ul>
-            </div>
+            <InfoBox infoData={this.state.listOfFilms} />
           </div>
 
           <footer className="app-footer">
