@@ -18,8 +18,10 @@ class App extends Component {
 
   componentDidMount() {
     const getAllData = async () => {
+      /*
+       *  setState of listOfFilms to data from filmsUrl
+       */
       await axios.get(filmsUrl).then(res => {
-        // let filmsUrlJson = JSON.stringify(res);
         let filmsUrlData = res;
         const ghibliFilms = filmsUrlData.data.map(item => {
           const film = {};
@@ -35,12 +37,17 @@ class App extends Component {
           return film;
         });
         this.setState({ listOfFilms: ghibliFilms });
-        console.log(this.state.listOfFilms);
       });
+      /*
+       *  setState of listOfPeople to data from peopleUrl
+       */
       await axios.get(peopleUrl).then(res => {
         let peopleUrlJson = JSON.stringify(res);
         console.log("got people");
       });
+      /*
+       *  setState of listOfLocations to data from locationsUrl
+       */
       await axios.get(locationsUrl).then(res => {
         let locationUrlJson = JSON.stringify(res);
         console.log("got locations");
