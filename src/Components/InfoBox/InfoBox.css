@@ -8,8 +8,8 @@
 .film-list{
     margin-top: 50px;
     position: absolute;
-    left: 10%;
-    top: 100px;
+    left: 20%;
+    top: 200px;
     width: 200px;
     height: 500px;
     overflow: auto;

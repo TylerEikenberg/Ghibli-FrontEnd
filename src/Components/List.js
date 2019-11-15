@@ -31,14 +31,19 @@ class List extends Component {
       ? "list-group-item active"
       : "list-group-item";
     return (
-      <li
-        className={activeClass}
-        onMouseEnter={this.isMouseHover}
-        onMouseLeave={this.isMouseHover}
-        onMouseDown={this.onMouseClick}
-      >
-        {this.props.name || this.props.title}
-      </li>
+      <div className="list-component-container">
+        <li
+          className={activeClass}
+          onMouseEnter={this.isMouseHover}
+          onMouseLeave={this.isMouseHover}
+          onMouseDown={this.onMouseClick}
+        >
+          {this.props.name || this.props.title}
+        </li>
+        {this.state.didMouseClick ? (
+          <div className="details-box-container"></div>
+        ) : null}
+      </div>
     );
   }
 }
