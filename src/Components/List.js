@@ -4,6 +4,7 @@ import "./List.css";
 class List extends Component {
   constructor(props) {
     super(props);
+    console.log(this.props);
     this.state = {
       didMouseClick: false,
       isHover: false
@@ -36,13 +37,10 @@ class List extends Component {
           className={activeClass}
           onMouseEnter={this.isMouseHover}
           onMouseLeave={this.isMouseHover}
-          onMouseDown={this.onMouseClick}
+          onMouseDown={() => this.props.setData(this.props)}
         >
           {this.props.name || this.props.title}
         </li>
-        {this.state.didMouseClick ? (
-          <div className="details-box-container"></div>
-        ) : null}
       </div>
     );
   }
