@@ -42,8 +42,18 @@ class App extends Component {
        *  setState of listOfPeople to data from peopleUrl
        */
       await axios.get(peopleUrl).then(res => {
-        let peopleUrlJson = JSON.stringify(res);
-        console.log("got people");
+        let peopleUrlData = res;
+        const ghibliPeople = peopleUrlData.data.map(item => {
+          const people = {};
+          people.id = item.id;
+          people.name = item.name;
+          people.gender = item.gender;
+          people.films = item.films;
+          people.url = item.url;
+          return people;
+        });
+        this.setState({ listOfPeople: ghibliPeople });
+        console.log(this.state.listOfPeople);
       });
       /*
        *  setState of listOfLocations to data from locationsUrl
