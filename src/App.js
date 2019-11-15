@@ -11,9 +11,9 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      listOfFilms: {},
-      listOfPeople: {},
-      listofLocations: {}
+      listOfFilms: [],
+      listOfPeople: [],
+      listofLocations: []
     };
   }
 
@@ -38,7 +38,7 @@ class App extends Component {
           return film;
         });
         this.setState({ listOfFilms: ghibliFilms });
-        console.log(this.state.listOfFilms);
+        console.log("got films");
       });
       /*
        *  setState of listOfPeople to data from peopleUrl
@@ -79,19 +79,32 @@ class App extends Component {
 
     getAllData();
   }
+
+  /**
+   * TODO
+   * LOOP THROUGH FILMS AND CREATE LIST ITEM OF EACH ONE
+   */
   render() {
     let filmTitle = this.state.listOfFilms[1];
-    console.log(filmTitle);
+    console.log(typeof this.state.listOfFilms);
     if (this.state.listOfFilms) {
       return (
         <div>
-          <header className="app-header">
-            <h1 className="app-text">GHIBLI API HEADER</h1>
-          </header>
+          <div>
+            <header className="app-header">
+              <h1 className="app-text">GHIBLI API HEADER</h1>
+            </header>
+          </div>
 
-          <ul className="list-group">
-            <List {...filmTitle} />
-          </ul>
+          <div className="main-window">
+            <div className="film-list">
+              <ul className="list-group position-absolute">
+                {this.state.listOfFilms.map(item => {
+                  return <List key={item.id} {...item} />;
+                })}
+              </ul>
+            </div>
+          </div>
 
           <footer className="app-footer">
             <h1 className="app-text">GHIBLI API FOOTER</h1>

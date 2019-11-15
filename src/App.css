@@ -23,3 +23,14 @@
   color: white;
   font-size: 32px;
 }
+
+.main-window{
+  position: relative;
+}
+.film-list{
+  position: absolute;
+  left: 40%;
+  top: -10%;
+  width: 200px;
+  height: 100%;
+}
