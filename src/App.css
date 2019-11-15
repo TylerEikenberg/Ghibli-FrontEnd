@@ -2,6 +2,7 @@
   box-sizing: border-box;
 }
 .app-header{
+  z-index: 1;
   width: 100%;
   height: 100px;
   background-color: black;
@@ -11,6 +12,7 @@
   top: 0;
 }
 .app-footer{
+  z-index: 1;
   width: 100%;
   height: 100px;
   background-color: black;
@@ -30,7 +32,7 @@
 .film-list{
   position: absolute;
   left: 40%;
-  top: -10%;
+  top: 100px;
   width: 200px;
   height: 100%;
 }
