@@ -34,6 +34,17 @@ class App extends Component {
   overlayClickHandler = () => {
     this.setState({ sideDrawerOpen: false });
   };
+  getCategorySelection = data => {
+    if (data === "films") {
+      this.setState({ filmsOn: true, peopleOn: false, locationsOn: false });
+    }
+    if (data === "people") {
+      this.setState({ peopleOn: true, filmsOn: false, locationsOn: false });
+    }
+    if (data === "locations") {
+      this.setState({ locationsOn: true, filmsOn: false, peopleOn: false });
+    }
+  };
 
   componentDidMount() {
     const getAllData = async () => {
@@ -123,7 +134,10 @@ class App extends Component {
         <div>
           <div style={{ height: "100%" }}>
             <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
-            <SideDrawer show={this.state.sideDrawerOpen} />
+            <SideDrawer
+              show={this.state.sideDrawerOpen}
+              selectCategory={this.getCategorySelection.bind(this)}
+            />
             {overlay}
           </div>
 

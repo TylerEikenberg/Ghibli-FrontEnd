@@ -14,13 +14,19 @@ class SideDrawer extends Component {
       <nav className={drawerClasses}>
         <ul>
           <li>
-            <button>Films</button>
+            <button onMouseDown={() => this.props.selectCategory("films")}>
+              Films
+            </button>
           </li>
           <li>
-            <button>People</button>
+            <button onMouseDown={() => this.props.selectCategory("people")}>
+              People
+            </button>
           </li>
           <li>
-            <button>Locations</button>
+            <button onMouseDown={() => this.props.selectCategory("locations")}>
+              Locations
+            </button>
           </li>
         </ul>
       </nav>
