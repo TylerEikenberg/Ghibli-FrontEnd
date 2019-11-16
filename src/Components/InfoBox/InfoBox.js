@@ -33,9 +33,9 @@ class InfoBox extends Component {
           </ul>
         </div>
         <div className="ghibli-detail-container">
-          <h1>{this.state.data.title}</h1>
-          <h3>{this.state.data.director}</h3>
-          <h3>{this.state.data.producer}</h3>
+          <h1>{this.state.data.title || this.state.data.name}</h1>
+          <h3>{this.state.data.director || this.state.data.gender}</h3>
+          <h3>{this.state.data.producer || this.state.data.films}</h3>
           <h4>{this.state.data.release_date}</h4>
           <p>{this.state.data.description}</p>
 

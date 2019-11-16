@@ -18,7 +18,11 @@ class App extends Component {
       listOfFilms: [],
       listOfPeople: [],
       listofLocations: [],
-      sideDrawerOpen: false
+      sideDrawerOpen: false,
+      filmsOn: true,
+      peopleOn: false,
+      locationsOn: false,
+      loading: true
     };
   }
 
@@ -86,7 +90,7 @@ class App extends Component {
           location.ulr = item.url;
           return location;
         });
-        this.setState({ listOfLocations: ghibliLocations });
+        this.setState({ listofLocations: ghibliLocations, loading: false });
         console.log("got locations");
       });
     };
@@ -99,11 +103,22 @@ class App extends Component {
    * LOOP THROUGH FILMS AND CREATE LIST ITEM OF EACH ONE
    */
   render() {
+    console.log(this.state.listofLocations);
+    console.log(this.state.listOfFilms);
     let overlay;
+    let infoBox;
+
     if (this.state.sideDrawerOpen) {
       overlay = <Overlay click={this.overlayClickHandler} />;
     }
-    if (this.state.listOfFilms) {
+    if (this.state.filmsOn) {
+      infoBox = <InfoBox infoData={this.state.listOfFilms} />;
+    } else if (this.state.peopleOn) {
+      infoBox = <InfoBox infoData={this.state.listOfPeople} />;
+    } else if (this.state.locationsOn) {
+      infoBox = <InfoBox infoData={this.state.listOfLocations} />;
+    }
+    if (!this.state.loading) {
       return (
         <div>
           <div style={{ height: "100%" }}>
@@ -112,9 +127,7 @@ class App extends Component {
             {overlay}
           </div>
 
-          <div className="main-window">
-            <InfoBox infoData={this.state.listOfFilms} />
-          </div>
+          <div className="main-window">{infoBox}</div>
 
           <footer className="app-footer">
             <h1 className="app-text">GHIBLI API FOOTER</h1>

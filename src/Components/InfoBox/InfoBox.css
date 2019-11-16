@@ -1,8 +1,6 @@
 .info-box-container{
     width: 800px;
     height: 500px;
-    border: 3px solid rgba(0, 0, 0, 0.146);
-    border-radius: 3px;
 }
 
 .film-list{
@@ -25,6 +23,6 @@
       border-radius: 4px;
       top: 25%;
       left: 30.3%;
-      background-color: rgba(239, 248, 226, 0.87);
+      background-color: rgba(239, 248, 226, 0.747);
       overflow: scroll;
   }
