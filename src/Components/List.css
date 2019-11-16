@@ -2,11 +2,3 @@
     position: relative;
 }
 
-.details-box-container{
-    position: absolute;
-    z-index: 500;
-    width: 700px;
-    height: 500px;
-    border: 5px solid black;
-    background-color: white;
-}

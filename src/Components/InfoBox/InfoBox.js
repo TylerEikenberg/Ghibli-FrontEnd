@@ -16,7 +16,7 @@ class InfoBox extends Component {
   };
 
   render() {
-    // console.log(this.props.infoData);
+    // console.log(typeof this.state.data.people);
     return (
       <div className="info-box-container">
         <div className="film-list">
@@ -38,7 +38,12 @@ class InfoBox extends Component {
           <h3>{this.state.data.producer}</h3>
           <h4>{this.state.data.release_date}</h4>
           <p>{this.state.data.description}</p>
-          <p>{this.state.data.people}</p>
+
+          {this.state.data.people
+            ? this.state.data.people.map(item => {
+                return <h5>{item.name}</h5>;
+              })
+            : null}
         </div>
       </div>
     );
