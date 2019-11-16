@@ -5,6 +5,7 @@ import List from "../List";
 class InfoBox extends Component {
   constructor(props) {
     super(props);
+    console.log(this.props);
     this.state = {
       data: []
     };
@@ -34,9 +35,13 @@ class InfoBox extends Component {
         </div>
         <div className="ghibli-detail-container">
           <h1>{this.state.data.title || this.state.data.name}</h1>
-          <h3>{this.state.data.director || this.state.data.gender}</h3>
+          <h3>
+            {this.state.data.director ||
+              this.state.data.gender ||
+              this.state.data.terrain}
+          </h3>
           <h3>{this.state.data.producer || this.state.data.films}</h3>
-          <h4>{this.state.data.release_date}</h4>
+          <h4>{this.state.data.release_date || this.state.data.climate}</h4>
           <p>{this.state.data.description}</p>
 
           {this.state.data.people

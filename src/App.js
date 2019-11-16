@@ -19,9 +19,9 @@ class App extends Component {
       listOfPeople: [],
       listofLocations: [],
       sideDrawerOpen: false,
-      filmsOn: true,
+      filmsOn: false,
       peopleOn: false,
-      locationsOn: false,
+      locationsOn: true,
       loading: true
     };
   }
@@ -115,8 +115,8 @@ class App extends Component {
       infoBox = <InfoBox infoData={this.state.listOfFilms} />;
     } else if (this.state.peopleOn) {
       infoBox = <InfoBox infoData={this.state.listOfPeople} />;
-    } else if (this.state.locationsOn) {
-      infoBox = <InfoBox infoData={this.state.listOfLocations} />;
+    } else if (this.state.locationsOn && this.state.listofLocations) {
+      infoBox = <InfoBox infoData={this.state.listofLocations} />;
     }
     if (!this.state.loading) {
       return (
