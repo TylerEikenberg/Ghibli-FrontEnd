@@ -13,7 +13,7 @@ class Toolbar extends Component {
       <header className="toolbar">
         <nav className="toolbar-navigation">
           <div>
-            <DrawerToggle />
+            <DrawerToggle click={this.props.drawerClickHandler} />
           </div>
           <div className="toolbar-logo">
             <h1>LOGO</h1>

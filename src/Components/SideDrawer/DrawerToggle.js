@@ -7,7 +7,7 @@ class DrawerToggle extends Component {
 
   render() {
     return (
-      <button className="toggle-button">
+      <button className="toggle-button" onClick={this.props.click}>
         <div className="toggle-line" />
         <div className="toggle-line" />
         <div className="toggle-line" />

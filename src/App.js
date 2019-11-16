@@ -3,6 +3,8 @@ import "./App.css";
 import List from "./Components/List";
 import InfoBox from "./Components/InfoBox/InfoBox";
 import Toolbar from "./Components/Toolbar/Toolbar";
+import SideDrawer from "./Components/SideDrawer/SideDrawer";
+import Overlay from "./Components/Overlay/Overlay";
 const axios = require("axios");
 
 const filmsUrl = "http://localhost:4000/films";
@@ -15,9 +17,19 @@ class App extends Component {
     this.state = {
       listOfFilms: [],
       listOfPeople: [],
-      listofLocations: []
+      listofLocations: [],
+      sideDrawerOpen: false
     };
   }
+
+  drawerToggleClickHandler = () => {
+    this.setState(prevState => {
+      return { sideDrawerOpen: !prevState.sideDrawerOpen };
+    });
+  };
+  overlayClickHandler = () => {
+    this.setState({ sideDrawerOpen: false });
+  };
 
   componentDidMount() {
     const getAllData = async () => {
@@ -87,11 +99,17 @@ class App extends Component {
    * LOOP THROUGH FILMS AND CREATE LIST ITEM OF EACH ONE
    */
   render() {
+    let overlay;
+    if (this.state.sideDrawerOpen) {
+      overlay = <Overlay click={this.overlayClickHandler} />;
+    }
     if (this.state.listOfFilms) {
       return (
         <div>
-          <div>
-            <Toolbar />
+          <div style={{ height: "100%" }}>
+            <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
+            <SideDrawer show={this.state.sideDrawerOpen} />
+            {overlay}
           </div>
 
           <div className="main-window">
