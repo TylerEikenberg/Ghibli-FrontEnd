@@ -17,6 +17,9 @@
   .toolbar-logo{
       margin-left: 1rem;
   }
+  .toolbar-logo h1{
+      color: white;
+  }
   .toolbar-navigation-items a{
     text-decoration: none;
     color: white;

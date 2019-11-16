@@ -16,21 +16,7 @@ class Toolbar extends Component {
             <DrawerToggle click={this.props.drawerClickHandler} />
           </div>
           <div className="toolbar-logo">
-            <h1>LOGO</h1>
-          </div>
-          <div className="spacer"> </div>
-          <div className="toolbar-navigation-items">
-            <ul>
-              <li>
-                <a href="#">Films</a>
-              </li>
-              <li>
-                <a href="#">People</a>
-              </li>
-              <li>
-                <a href="#">Locations</a>
-              </li>
-            </ul>
+            <h1>Studio Ghibli API</h1>
           </div>
         </nav>
       </header>
