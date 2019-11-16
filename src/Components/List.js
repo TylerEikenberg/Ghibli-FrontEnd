@@ -4,7 +4,7 @@ import "./List.css";
 class List extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props);
+
     this.state = {
       isHover: false
     };
