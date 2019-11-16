@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import "../SideDrawer/DrawerToggle";
 import "./Toolbar.css";
+import DrawerToggle from "../SideDrawer/DrawerToggle";
 
 class Toolbar extends Component {
   constructor(props) {
@@ -10,10 +12,13 @@ class Toolbar extends Component {
     return (
       <header className="toolbar">
         <nav className="toolbar-navigation">
-          <div></div>
+          <div>
+            <DrawerToggle />
+          </div>
           <div className="toolbar-logo">
             <h1>LOGO</h1>
           </div>
+          <div className="spacer"> </div>
           <div className="toolbar-navigation-items">
             <ul>
               <li>
