@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import List from "./Components/List";
 import InfoBox from "./Components/InfoBox/InfoBox";
+import Toolbar from "./Components/Toolbar/Toolbar";
 const axios = require("axios");
 
 const filmsUrl = "http://localhost:4000/films";
@@ -90,9 +91,7 @@ class App extends Component {
       return (
         <div>
           <div>
-            <header className="app-header">
-              <h1 className="app-text">GHIBLI API HEADER</h1>
-            </header>
+            <Toolbar />
           </div>
 
           <div className="main-window">
