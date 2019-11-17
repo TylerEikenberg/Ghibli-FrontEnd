@@ -8,6 +8,7 @@ import SideDrawer from "./Components/SideDrawer/SideDrawer";
 import Overlay from "./Components/Overlay/Overlay";
 import CreateBox from "./Components/CreateBox/CreateBox";
 import DeleteBox from "./Components/DeleteBox/DeleteBox";
+import UpdateBox from "./Components/UpdateBox/UpdateBox";
 const axios = require("axios");
 
 const filmsUrl = "http://localhost:4000/films";
@@ -172,6 +173,7 @@ class App extends Component {
             {this.state.deleteVisable ? (
               <DeleteBox closeHandler={this.closeCreate.bind(this)} />
             ) : null}
+            <UpdateBox />
           </div>
 
           <footer className="app-footer">
