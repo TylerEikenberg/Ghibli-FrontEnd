@@ -141,8 +141,8 @@ class App extends Component {
             {overlay}
           </div>
 
-          <div className="main-window">
-            {infoBox}
+          <div className="main-window">{infoBox}</div>
+          <div className="div-express-form">
             <CreateBox />
           </div>
 

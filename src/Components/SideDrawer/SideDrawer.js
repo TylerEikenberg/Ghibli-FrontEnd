@@ -20,12 +20,17 @@ class SideDrawer extends Component {
           </li>
           <li>
             <button onMouseDown={() => this.props.selectCategory("people")}>
-              People
+              Characters
             </button>
           </li>
           <li>
             <button onMouseDown={() => this.props.selectCategory("locations")}>
               Locations
+            </button>
+          </li>
+          <li>
+            <button onMouseDown={() => this.props.selectCategory("create")}>
+              Create a character
             </button>
           </li>
         </ul>

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import "./CreateBox.css";
 
 class CreateBox extends Component {
   constructor(props) {
@@ -38,6 +39,7 @@ class CreateBox extends Component {
             <input
               type="text"
               name="name"
+              placeholder="Name"
               value={name}
               onChange={this.changeHandler}
             />
@@ -46,6 +48,7 @@ class CreateBox extends Component {
             <input
               type="text"
               name="gender"
+              placeholder="Gender"
               value={gender}
               onChange={this.changeHandler}
             />
