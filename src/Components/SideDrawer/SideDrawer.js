@@ -14,32 +14,56 @@ class SideDrawer extends Component {
       <nav className={drawerClasses}>
         <ul>
           <li>
-            <button onMouseDown={() => this.props.selectCategory("films")}>
+            <button
+              type="button"
+              class="btn btn-info btn-lg opaque"
+              onMouseDown={() => this.props.selectCategory("films")}
+            >
               Films
             </button>
           </li>
           <li>
-            <button onMouseDown={() => this.props.selectCategory("people")}>
+            <button
+              type="button"
+              class="btn btn-info btn-lg opaque"
+              onMouseDown={() => this.props.selectCategory("people")}
+            >
               Characters
             </button>
           </li>
           <li>
-            <button onMouseDown={() => this.props.selectCategory("locations")}>
+            <button
+              type="button"
+              class="btn btn-info btn-lg opaque"
+              onMouseDown={() => this.props.selectCategory("locations")}
+            >
               Locations
             </button>
           </li>
           <li>
-            <button onMouseDown={() => this.props.selectCategory("create")}>
+            <button
+              type="button"
+              class="btn btn-info btn-lg opaque"
+              onMouseDown={() => this.props.selectCategory("create")}
+            >
               Create a character
             </button>
           </li>
           <li>
-            <button onMouseDown={() => this.props.selectCategory("delete")}>
+            <button
+              type="button"
+              class="btn btn-info btn-lg opaque"
+              onMouseDown={() => this.props.selectCategory("delete")}
+            >
               Delete a character
             </button>
           </li>
           <li>
-            <button onMouseDown={() => this.props.selectCategory("update")}>
+            <button
+              type="button"
+              class="btn btn-info btn-lg opaque"
+              onMouseDown={() => this.props.selectCategory("update")}
+            >
               Update a character
             </button>
           </li>

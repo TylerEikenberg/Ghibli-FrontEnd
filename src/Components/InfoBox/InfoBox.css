@@ -25,4 +25,10 @@
       left: 30.3%;
       background-color: rgba(239, 248, 226, 0.747);
       overflow: scroll;
+      box-shadow: 15px 15px 20px 1px rgba(0,0,0,0.75);
   }
+
+  .opaque{
+    background-color: rgba(205, 104, 73, 0.797);
+    border: rgb(210, 145, 125);
+}

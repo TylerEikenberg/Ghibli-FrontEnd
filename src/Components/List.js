@@ -23,8 +23,8 @@ class List extends Component {
 
   render() {
     const activeClass = this.state.isHover
-      ? "list-group-item active"
-      : "list-group-item";
+      ? "list-group-item opaque text-color-white"
+      : "list-group-item opaque text-color-white";
     return (
       <div className="list-component-container">
         <li

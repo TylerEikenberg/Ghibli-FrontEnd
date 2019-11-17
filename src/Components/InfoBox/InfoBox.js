@@ -5,7 +5,7 @@ import List from "../List";
 class InfoBox extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props);
+
     this.state = {
       data: []
     };
@@ -21,7 +21,7 @@ class InfoBox extends Component {
     return (
       <div className="info-box-container">
         <div className="film-list">
-          <ul className="list-group position-absolute">
+          <ul className="list-group position-absolute ">
             {this.props.infoData.map(item => {
               return (
                 <List

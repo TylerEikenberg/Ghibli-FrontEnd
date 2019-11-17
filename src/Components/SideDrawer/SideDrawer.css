@@ -36,3 +36,12 @@
 .side-drawer a:active {
     color: darkblue;
 }
+
+.opaque{
+    background-color: rgba(205, 104, 73, 0.797);
+    border: rgb(210, 145, 125);
+}
+.opaque:hover{
+    background-color: rgba(205, 104, 73, 0.934);
+    border: rgb(210, 129, 104);
+}

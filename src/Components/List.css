@@ -2,3 +2,9 @@
     position: relative;
 }
 
+.text-color-white{
+    color: white;
+}
+.text-color-white:hover{
+    color: rgb(249, 249, 175);
+}
