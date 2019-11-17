@@ -40,7 +40,7 @@ class InfoBox extends Component {
               this.state.data.gender ||
               this.state.data.terrain}
           </h3>
-          <h3>{this.state.data.producer || this.state.data.films}</h3>
+          <h3>{this.state.data.producer || this.state.data.id}</h3>
           <h4>{this.state.data.release_date || this.state.data.climate}</h4>
           <p>{this.state.data.description}</p>
 

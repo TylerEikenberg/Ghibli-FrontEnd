@@ -95,7 +95,11 @@ class App extends Component {
     }
   };
   closeCreate = () => {
-    this.setState({ createVisable: false, deleteVisable: false });
+    this.setState({
+      createVisable: false,
+      deleteVisable: false,
+      updateVisable: false
+    });
   };
 
   componentDidMount() {

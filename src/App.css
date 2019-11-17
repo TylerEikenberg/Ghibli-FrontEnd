@@ -59,3 +59,7 @@ a:hover{
   top: 40%;
   left: 35%;
 }
+
+a{
+  font-family: 'Poppins', sans-serif;
+}

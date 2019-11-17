@@ -26,6 +26,7 @@
 }
 .side-drawer li{
     margin: 0.5rem 0;
+    font-family: 'Poppins', sans-serif;
 }
 .side-drawer a{
     color: white;
@@ -44,4 +45,5 @@
 .opaque:hover{
     background-color: rgba(205, 104, 73, 0.934);
     border: rgb(210, 129, 104);
+    color: rgb(249, 249, 175);
 }

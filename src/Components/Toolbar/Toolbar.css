@@ -19,6 +19,7 @@
   }
   .toolbar-logo h1{
       color: white;
+      font-family: 'Poppins', sans-serif;
   }
   .toolbar-navigation-items a{
     text-decoration: none;

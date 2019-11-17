@@ -41,7 +41,7 @@ class UpdateBox extends Component {
             <input
               type="text"
               name="id"
-              placeholder="id"
+              placeholder="ID"
               value={id}
               onChange={this.changeHandler}
             />
