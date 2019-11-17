@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./App.css";
-import List from "./Components/List";
 
 import InfoBox from "./Components/InfoBox/InfoBox";
 import Toolbar from "./Components/Toolbar/Toolbar";

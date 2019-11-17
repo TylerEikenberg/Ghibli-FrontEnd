@@ -16,7 +16,7 @@ class SideDrawer extends Component {
           <li>
             <button
               type="button"
-              class="btn btn-info btn-lg opaque"
+              className="btn btn-info btn-lg opaque"
               onMouseDown={() => this.props.selectCategory("films")}
             >
               Films
@@ -25,7 +25,7 @@ class SideDrawer extends Component {
           <li>
             <button
               type="button"
-              class="btn btn-info btn-lg opaque"
+              className="btn btn-info btn-lg opaque"
               onMouseDown={() => this.props.selectCategory("people")}
             >
               Characters
@@ -34,7 +34,7 @@ class SideDrawer extends Component {
           <li>
             <button
               type="button"
-              class="btn btn-info btn-lg opaque"
+              className="btn btn-info btn-lg opaque"
               onMouseDown={() => this.props.selectCategory("locations")}
             >
               Locations
@@ -43,7 +43,7 @@ class SideDrawer extends Component {
           <li>
             <button
               type="button"
-              class="btn btn-info btn-lg opaque"
+              className="btn btn-info btn-lg opaque"
               onMouseDown={() => this.props.selectCategory("create")}
             >
               Create a character
@@ -52,7 +52,7 @@ class SideDrawer extends Component {
           <li>
             <button
               type="button"
-              class="btn btn-info btn-lg opaque"
+              className="btn btn-info btn-lg opaque"
               onMouseDown={() => this.props.selectCategory("delete")}
             >
               Delete a character
