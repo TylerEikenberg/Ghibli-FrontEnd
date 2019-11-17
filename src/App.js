@@ -24,7 +24,8 @@ class App extends Component {
       filmsOn: true,
       peopleOn: false,
       locationsOn: false,
-      loading: true
+      loading: true,
+      createVisable: false
     };
   }
 
@@ -46,6 +47,12 @@ class App extends Component {
     if (data === "locations") {
       this.setState({ locationsOn: true, filmsOn: false, peopleOn: false });
     }
+    if (data === "create") {
+      this.setState({ createVisable: true });
+    }
+  };
+  closeCreate = () => {
+    this.setState({ createVisable: false });
   };
 
   componentDidMount() {
@@ -143,7 +150,9 @@ class App extends Component {
 
           <div className="main-window">{infoBox}</div>
           <div className="div-express-form">
-            <CreateBox />
+            {this.state.createVisable ? (
+              <CreateBox closeHandler={this.closeCreate.bind(this)} />
+            ) : null}
           </div>
 
           <footer className="app-footer">

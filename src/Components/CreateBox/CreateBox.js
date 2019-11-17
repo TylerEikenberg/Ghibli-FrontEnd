@@ -23,11 +23,14 @@ class CreateBox extends Component {
       .post("http://localhost:4000/people/create", this.state)
       .then(response => {
         console.log(response);
+        this.props.closeHandler();
       })
       .catch(error => {
         console.log(error);
       });
   };
+
+  componentDidMount() {}
 
   render() {
     const { name, gender } = this.state;
