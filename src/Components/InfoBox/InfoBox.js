@@ -13,7 +13,6 @@ class InfoBox extends Component {
 
   getChildData = info => {
     this.setState({ data: info });
-    console.log(this.state.data);
   };
 
   render() {
