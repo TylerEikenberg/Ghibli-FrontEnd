@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 import axios from "axios";
-import "./CreateBox.css";
+import "./DeleteBox.css";
 
-class CreateBox extends Component {
+class DeleteBox extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      name: "",
-      gender: ""
+      id: ""
     };
   }
 
@@ -20,7 +19,7 @@ class CreateBox extends Component {
     event.preventDefault();
     console.log(this.state);
     axios
-      .post("http://localhost:4000/people/create", this.state)
+      .delete(`http://localhost:4000/people/delete/${this.state}`)
       .then(response => {
         console.log(response);
         this.props.closeHandler();
@@ -31,26 +30,17 @@ class CreateBox extends Component {
   };
 
   render() {
-    const { name, gender } = this.state;
+    const { id } = this.state;
     return (
       <div className="create-box-container">
-        <h2>Create a character</h2>
+        <h2>Input a characters id to delete them</h2>
         <form onSubmit={this.submitHandler}>
           <div>
             <input
               type="text"
-              name="name"
-              placeholder="Name"
-              value={name}
-              onChange={this.changeHandler}
-            />
-          </div>
-          <div>
-            <input
-              type="text"
-              name="gender"
-              placeholder="Gender"
-              value={gender}
+              name="id"
+              placeholder="ID"
+              value={id}
               onChange={this.changeHandler}
             />
           </div>
@@ -61,4 +51,4 @@ class CreateBox extends Component {
   }
 }
 
-export default CreateBox;
+export default DeleteBox;

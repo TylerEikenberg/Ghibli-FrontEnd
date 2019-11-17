@@ -7,6 +7,7 @@ import Toolbar from "./Components/Toolbar/Toolbar";
 import SideDrawer from "./Components/SideDrawer/SideDrawer";
 import Overlay from "./Components/Overlay/Overlay";
 import CreateBox from "./Components/CreateBox/CreateBox";
+import DeleteBox from "./Components/DeleteBox/DeleteBox";
 const axios = require("axios");
 
 const filmsUrl = "http://localhost:4000/films";
@@ -25,7 +26,8 @@ class App extends Component {
       peopleOn: false,
       locationsOn: false,
       loading: true,
-      createVisable: false
+      createVisable: false,
+      deleteVisable: false
     };
   }
 
@@ -39,20 +41,38 @@ class App extends Component {
   };
   getCategorySelection = data => {
     if (data === "films") {
-      this.setState({ filmsOn: true, peopleOn: false, locationsOn: false });
+      this.setState({
+        filmsOn: true,
+        peopleOn: false,
+        locationsOn: false,
+        createVisable: false
+      });
     }
     if (data === "people") {
-      this.setState({ peopleOn: true, filmsOn: false, locationsOn: false });
+      this.setState({
+        peopleOn: true,
+        filmsOn: false,
+        locationsOn: false,
+        createVisable: false
+      });
     }
     if (data === "locations") {
-      this.setState({ locationsOn: true, filmsOn: false, peopleOn: false });
+      this.setState({
+        locationsOn: true,
+        filmsOn: false,
+        peopleOn: false,
+        createVisable: false
+      });
     }
     if (data === "create") {
-      this.setState({ createVisable: true });
+      this.setState({ createVisable: true, deleteVisable: false });
+    }
+    if (data === "delete") {
+      this.setState({ createVisable: false, deleteVisable: true });
     }
   };
   closeCreate = () => {
-    this.setState({ createVisable: false });
+    this.setState({ createVisable: false, deleteVisable: false });
   };
 
   componentDidMount() {
@@ -118,10 +138,6 @@ class App extends Component {
     getAllData();
   }
 
-  /**
-   * TODO
-   * LOOP THROUGH FILMS AND CREATE LIST ITEM OF EACH ONE
-   */
   render() {
     let overlay;
     let infoBox;
@@ -152,6 +168,9 @@ class App extends Component {
           <div className="div-express-form">
             {this.state.createVisable ? (
               <CreateBox closeHandler={this.closeCreate.bind(this)} />
+            ) : null}
+            {this.state.deleteVisable ? (
+              <DeleteBox closeHandler={this.closeCreate.bind(this)} />
             ) : null}
           </div>
 
