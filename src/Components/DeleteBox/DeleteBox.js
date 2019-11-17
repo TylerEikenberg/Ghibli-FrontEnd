@@ -19,7 +19,10 @@ class DeleteBox extends Component {
     event.preventDefault();
     console.log(this.state);
     axios
-      .delete(`http://localhost:4000/people/delete/${this.state}`)
+      .delete(
+        `http://localhost:4000/people/delete/${this.state.id}`,
+        this.state
+      )
       .then(response => {
         console.log(response);
         this.props.closeHandler();
