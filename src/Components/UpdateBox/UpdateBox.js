@@ -22,7 +22,7 @@ class UpdateBox extends Component {
     console.log(this.state);
     axios
       .put(
-        `https://ghibli-api-tse.herokuapp.com/update/${this.state.id}`,
+        `https://ghibli-api-tse.herokuapp.com/people/update/${this.state.id}`,
         this.state
       )
       .then(response => {
