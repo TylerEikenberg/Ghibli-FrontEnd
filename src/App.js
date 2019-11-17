@@ -10,9 +10,9 @@ import DeleteBox from "./Components/DeleteBox/DeleteBox";
 import UpdateBox from "./Components/UpdateBox/UpdateBox";
 const axios = require("axios");
 
-const filmsUrl = "http://localhost:4000/films";
-const peopleUrl = "http://localhost:4000/people";
-const locationsUrl = "http://localhost:4000/locations";
+const filmsUrl = "https://ghibli-api-tse.herokuapp.com/films";
+const peopleUrl = "https://ghibli-api-tse.herokuapp.com/people";
+const locationsUrl = "https://ghibli-api-tse.herokuapp.com/locations";
 
 class App extends Component {
   constructor(props) {
