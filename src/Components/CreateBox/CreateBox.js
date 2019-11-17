@@ -20,7 +20,7 @@ class CreateBox extends Component {
     event.preventDefault();
     console.log(this.state);
     axios
-      .post("http://localhost:4000/people/create", this.state)
+      .post("https://ghibli-api-tse.herokuapp.com/create", this.state)
       .then(response => {
         console.log(response);
         this.props.closeHandler();

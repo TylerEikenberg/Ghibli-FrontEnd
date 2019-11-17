@@ -21,7 +21,10 @@ class UpdateBox extends Component {
     event.preventDefault();
     console.log(this.state);
     axios
-      .put(`http://localhost:4000/people/update/${this.state.id}`, this.state)
+      .put(
+        `https://ghibli-api-tse.herokuapp.com/update/${this.state.id}`,
+        this.state
+      )
       .then(response => {
         console.log(response);
         this.props.closeHandler();

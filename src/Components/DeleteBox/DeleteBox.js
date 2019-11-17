@@ -20,7 +20,7 @@ class DeleteBox extends Component {
     console.log(this.state);
     axios
       .delete(
-        `http://localhost:4000/people/delete/${this.state.id}`,
+        `https://ghibli-api-tse.herokuapp.com/delete/${this.state.id}`,
         this.state
       )
       .then(response => {
