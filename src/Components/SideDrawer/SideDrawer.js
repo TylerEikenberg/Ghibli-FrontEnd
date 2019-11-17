@@ -38,6 +38,11 @@ class SideDrawer extends Component {
               Delete a character
             </button>
           </li>
+          <li>
+            <button onMouseDown={() => this.props.selectCategory("update")}>
+              Update a character
+            </button>
+          </li>
         </ul>
       </nav>
     );

@@ -28,7 +28,8 @@ class App extends Component {
       locationsOn: false,
       loading: true,
       createVisable: false,
-      deleteVisable: false
+      deleteVisable: false,
+      updateVisable: false
     };
   }
 
@@ -46,7 +47,9 @@ class App extends Component {
         filmsOn: true,
         peopleOn: false,
         locationsOn: false,
-        createVisable: false
+        createVisable: false,
+        deleteVisable: false,
+        updateVisable: false
       });
     }
     if (data === "people") {
@@ -54,7 +57,9 @@ class App extends Component {
         peopleOn: true,
         filmsOn: false,
         locationsOn: false,
-        createVisable: false
+        createVisable: false,
+        deleteVisable: false,
+        updateVisable: false
       });
     }
     if (data === "locations") {
@@ -62,14 +67,31 @@ class App extends Component {
         locationsOn: true,
         filmsOn: false,
         peopleOn: false,
-        createVisable: false
+        createVisable: false,
+        deleteVisable: false,
+        updateVisable: false
       });
     }
     if (data === "create") {
-      this.setState({ createVisable: true, deleteVisable: false });
+      this.setState({
+        createVisable: true,
+        deleteVisable: false,
+        updateVisable: false
+      });
     }
     if (data === "delete") {
-      this.setState({ createVisable: false, deleteVisable: true });
+      this.setState({
+        createVisable: false,
+        deleteVisable: true,
+        updateVisable: false
+      });
+    }
+    if (data === "update") {
+      this.setState({
+        createVisable: false,
+        deleteVisable: false,
+        updateVisable: true
+      });
     }
   };
   closeCreate = () => {
@@ -173,7 +195,9 @@ class App extends Component {
             {this.state.deleteVisable ? (
               <DeleteBox closeHandler={this.closeCreate.bind(this)} />
             ) : null}
-            <UpdateBox />
+            {this.state.updateVisable ? (
+              <UpdateBox closeHandler={this.closeCreate.bind(this)} />
+            ) : null}
           </div>
 
           <footer className="app-footer">
