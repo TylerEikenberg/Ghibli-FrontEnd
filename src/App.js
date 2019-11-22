@@ -101,67 +101,67 @@ class App extends Component {
     });
   };
 
-  componentDidMount() {
-    const getAllData = async () => {
-      /*
-       *  setState of listOfFilms to data from filmsUrl
-       */
-      await axios.get(filmsUrl).then(res => {
-        let filmsUrlData = res;
-        const ghibliFilms = filmsUrlData.data.map(item => {
-          const film = {};
-          film.id = item.id;
-          film.description = item.description;
-          film.director = item.director;
-          film.title = item.title;
-          film.producer = item.producer;
-          film.release_date = item.release_date;
-          film.url = item.url;
-          film.locations = item.locations;
-          film.people = item.people;
-          return film;
-        });
-        this.setState({ listOfFilms: ghibliFilms });
-        console.log("got films");
+  getAllData = async () => {
+    /*
+     *  setState of listOfFilms to data from filmsUrl
+     */
+    await axios.get(filmsUrl).then(res => {
+      let filmsUrlData = res;
+      const ghibliFilms = filmsUrlData.data.map(item => {
+        const film = {};
+        film.id = item.id;
+        film.description = item.description;
+        film.director = item.director;
+        film.title = item.title;
+        film.producer = item.producer;
+        film.release_date = item.release_date;
+        film.url = item.url;
+        film.locations = item.locations;
+        film.people = item.people;
+        return film;
       });
-      /*
-       *  setState of listOfPeople to data from peopleUrl
-       */
-      await axios.get(peopleUrl).then(res => {
-        let peopleUrlData = res;
-        const ghibliPeople = peopleUrlData.data.map(item => {
-          const people = {};
-          people.id = item.id;
-          people.name = item.name;
-          people.gender = item.gender;
-          people.films = item.films;
-          people.url = item.url;
-          return people;
-        });
-        this.setState({ listOfPeople: ghibliPeople });
-        console.log("got people");
+      this.setState({ listOfFilms: ghibliFilms });
+      console.log("got films");
+    });
+    /*
+     *  setState of listOfPeople to data from peopleUrl
+     */
+    await axios.get(peopleUrl).then(res => {
+      let peopleUrlData = res;
+      const ghibliPeople = peopleUrlData.data.map(item => {
+        const people = {};
+        people.id = item.id;
+        people.name = item.name;
+        people.gender = item.gender;
+        people.films = item.films;
+        people.url = item.url;
+        return people;
       });
-      /*
-       *  setState of listOfLocations to data from locationsUrl
-       */
-      await axios.get(locationsUrl).then(res => {
-        let locationUrlData = res;
-        const ghibliLocations = locationUrlData.data.map(item => {
-          const location = {};
-          location.id = item.id;
-          location.name = item.name;
-          location.climate = item.climate;
-          location.terrain = item.terrain;
-          location.films = item.films;
-          location.ulr = item.url;
-          return location;
-        });
-        this.setState({ listofLocations: ghibliLocations, loading: false });
-        console.log("got locations");
+      this.setState({ listOfPeople: ghibliPeople });
+      console.log("got people");
+    });
+    /*
+     *  setState of listOfLocations to data from locationsUrl
+     */
+    await axios.get(locationsUrl).then(res => {
+      let locationUrlData = res;
+      const ghibliLocations = locationUrlData.data.map(item => {
+        const location = {};
+        location.id = item.id;
+        location.name = item.name;
+        location.climate = item.climate;
+        location.terrain = item.terrain;
+        location.films = item.films;
+        location.ulr = item.url;
+        return location;
       });
-    };
+      this.setState({ listofLocations: ghibliLocations, loading: false });
+      console.log("got locations");
+    });
+  };
 
-    getAllData();
+  componentDidMount() {
+    this.getAllData();
   }
 
   render() {
@@ -193,7 +193,10 @@ class App extends Component {
           <div className="main-window">{infoBox}</div>
           <div className="div-express-form">
             {this.state.createVisable ? (
-              <CreateBox closeHandler={this.closeCreate.bind(this)} />
+              <CreateBox
+                closeHandler={this.closeCreate.bind(this)}
+                afterCreate={this.getAllData}
+              />
             ) : null}
             {this.state.deleteVisable ? (
               <DeleteBox closeHandler={this.closeCreate.bind(this)} />

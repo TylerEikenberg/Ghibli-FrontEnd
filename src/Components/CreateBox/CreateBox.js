@@ -24,6 +24,7 @@ class CreateBox extends Component {
       .then(response => {
         console.log(response);
         this.props.closeHandler();
+        this.props.afterCreate();
       })
       .catch(error => {
         console.log(error);
