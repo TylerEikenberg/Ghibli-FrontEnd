@@ -33,19 +33,25 @@ class InfoBox extends Component {
           </ul>
         </div>
         <div className="ghibli-detail-container">
-          <h1>{this.state.data.title || this.state.data.name}</h1>
-          <h3>
+          <h1 className="infobox-detail">
+            {this.state.data.title || this.state.data.name}
+          </h1>
+          <h3 className="infobox-detail">
             {this.state.data.director ||
               this.state.data.gender ||
               this.state.data.terrain}
           </h3>
-          <h3>{this.state.data.producer || this.state.data.id}</h3>
-          <h4>{this.state.data.release_date || this.state.data.climate}</h4>
-          <p>{this.state.data.description}</p>
+          <h3 className="infobox-detail">
+            {this.state.data.producer || this.state.data.id}
+          </h3>
+          <h4 className="infobox-detail">
+            {this.state.data.release_date || this.state.data.climate}
+          </h4>
+          <p className="infobox-detail">{this.state.data.description}</p>
 
           {this.state.data.people
             ? this.state.data.people.map(item => {
-                return <h5>{item.name}</h5>;
+                return <h5 className="infobox-detail">{item.name}</h5>;
               })
             : null}
         </div>
