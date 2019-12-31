@@ -1,13 +1,8 @@
 import React, { Component } from "react";
-import "../SideDrawer/DrawerToggle";
 import "./Toolbar.css";
 import DrawerToggle from "../SideDrawer/DrawerToggle";
 
 class Toolbar extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <header className="toolbar">

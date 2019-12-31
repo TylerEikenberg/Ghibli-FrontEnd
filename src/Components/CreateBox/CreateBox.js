@@ -7,35 +7,26 @@ import "./CreateBox.css";
  */
 
 function CreateBox(props) {
-  // this.state = {
-  //   name: "",
-  //   gender: ""
-  // };
-
   const [name, setName] = useState("");
   const [gender, setGender] = useState("");
 
   const changeHandler = event => {
     if (event.target.name === "gender") {
-      console.log(event.target.value);
-      setGender({ [event.target.name]: event.target.value });
+      setGender({ gender: event.target.value });
     }
     if (event.target.name === "name") {
-      console.log(event.target.value);
-      setName({ [event.target.name]: event.target.value });
+      setName({ name: event.target.value });
     }
   };
 
   const submitHandler = event => {
     event.preventDefault();
-
     axios
       .post("https://ghibli-api-tse.herokuapp.com/people/create", {
         name: name.name,
         gender: gender.gender
       })
-      .then(response => {
-        console.log(response);
+      .then(() => {
         props.closeHandler();
         props.afterCreate();
       })

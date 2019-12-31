@@ -215,6 +215,7 @@ class App extends Component {
             <a
               href="https://github.com/TylerEikenberg"
               target="_blank"
+              rel="noopener noreferrer"
               className="app-text"
             >
               Made by Tyler Eikenberg
@@ -222,6 +223,7 @@ class App extends Component {
             <a
               href="https://ghibli-api-tse.herokuapp.com/"
               target="_blank"
+              rel="noopener noreferrer"
               className="app-text"
             >
               Powered by Studio Ghibli API
