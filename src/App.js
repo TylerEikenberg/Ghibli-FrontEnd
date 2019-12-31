@@ -190,20 +190,25 @@ class App extends Component {
             {overlay}
           </div>
 
-          <div className="main-window">{infoBox}</div>
-          <div className="div-express-form">
-            {this.state.createVisable ? (
-              <CreateBox
-                closeHandler={this.closeCreate.bind(this)}
-                afterCreate={this.getAllData}
-              />
-            ) : null}
-            {this.state.deleteVisable ? (
-              <DeleteBox closeHandler={this.closeCreate.bind(this)} />
-            ) : null}
-            {this.state.updateVisable ? (
-              <UpdateBox closeHandler={this.closeCreate.bind(this)} />
-            ) : null}
+          <div className="main-window">
+            <span></span>
+            {infoBox}
+            <span>
+              <div className="div-express-form">
+                {this.state.createVisable ? (
+                  <CreateBox
+                    closeHandler={this.closeCreate.bind(this)}
+                    afterCreate={this.getAllData}
+                  />
+                ) : null}
+                {this.state.deleteVisable ? (
+                  <DeleteBox closeHandler={this.closeCreate.bind(this)} />
+                ) : null}
+                {this.state.updateVisable ? (
+                  <UpdateBox closeHandler={this.closeCreate.bind(this)} />
+                ) : null}
+              </div>
+            </span>
           </div>
 
           <footer className="app-footer">

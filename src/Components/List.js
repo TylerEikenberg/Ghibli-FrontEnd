@@ -26,7 +26,7 @@ class List extends Component {
       ? "list-group-item opaque text-color-white"
       : "list-group-item opaque text-color-white";
     return (
-      <div className="list-component-container">
+      <div>
         <li
           className={activeClass}
           onMouseEnter={this.isMouseHover}

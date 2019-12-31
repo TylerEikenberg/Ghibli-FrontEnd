@@ -36,7 +36,7 @@ class CreateBox extends Component {
     return (
       <div className="create-box-container">
         <h2>Create a character</h2>
-        <form onSubmit={this.submitHandler}>
+        <form className="create-box-form" onSubmit={this.submitHandler}>
           <div>
             <input
               type="text"
@@ -55,7 +55,9 @@ class CreateBox extends Component {
               onChange={this.changeHandler}
             />
           </div>
-          <button type="submit">Submit</button>
+          <button className="submit-button" type="submit">
+            Submit
+          </button>
         </form>
       </div>
     );

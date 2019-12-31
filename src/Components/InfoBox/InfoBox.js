@@ -20,7 +20,7 @@ class InfoBox extends Component {
     return (
       <div className="info-box-container">
         <div className="film-list">
-          <ul className="list-group position-absolute ">
+          <ul className="list-group">
             {this.props.infoData.map(item => {
               return (
                 <List

@@ -1,15 +1,37 @@
-.create-box-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 500px;
-    height: 250px;
-    border: 3px solid rgba(0, 0, 0, 0.762);
-    border-radius: 6px;
-    background-color: rgba(142, 162, 167, 0.742);
+.create-box-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px;
+  max-height: 300px;
+  border: 3px solid rgba(0, 0, 0, 0.762);
+  border-radius: 6px;
+  background-color: rgba(142, 162, 167, 0.742);
 }
-.create-box-container h2{
-    color: rgb(79, 20, 20);
-    font-family: 'Poppins', sans-serif;
-    font-size: 22px;
+.create-box-container h2 {
+  color: rgb(79, 20, 20);
+  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+  padding: 2vh 10vw 3vh 10vw;
+}
+
+.create-box-form {
+  padding-bottom: 10vh;
+}
+.create-box-form div {
+  margin: 1vh;
+}
+
+.submit-button {
+  margin-left: 3vw;
+  padding: 1vh 1vw 1vh 1vw;
+  background-color: burlywood;
+  color: #fff;
+  border: none;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 20% 0 20% 0;
+}
+.submit-button:hover {
+  background-color: rgb(159, 132, 97);
+  color: rgb(218, 255, 143);
 }

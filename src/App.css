@@ -1,9 +1,9 @@
-*{
+* {
   box-sizing: border-box;
 }
-.app-header{
+.app-header {
   z-index: 1;
-  width: 100%;
+  width: 100vw;
   height: 100px;
   background-color: black;
   text-align: center;
@@ -11,9 +11,9 @@
   left: 0;
   top: 0;
 }
-.app-footer{
+.app-footer {
   z-index: 1;
-  width: 100%;
+  width: 100vw;
   height: 100px;
   background-color: black;
   text-align: center;
@@ -21,45 +21,45 @@
   left: 0;
   bottom: 0;
 }
-.app-text{
+.app-text {
   color: white;
   font-size: 16px;
   text-decoration: none;
 }
-a{
+a {
   padding: 0 1rem;
   text-decoration: none;
 }
-a:hover{
+a:hover {
   color: burlywood;
   text-decoration: none;
 }
 
-.main-window{
-  position: relative;
-  height: 1000px;
-  width: 100%;
+.main-window {
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+  width: 100vw;
   background-image: url("./assets/ghiblibg1.jpg");
   background-size: cover;
 }
-.film-list{
-  margin-top: 50px;
+
+.div-express-form {
   position: absolute;
-  left: 10%;
-  top: 100px;
-  width: 200px;
-  height: 500px;
-  overflow: auto;
-  border: 3px solid rgba(0, 0, 0, 0.146);
-  border-radius: 3px;
+  border: 2px solid black;
+  margin-top: 30vh;
+  margin-left: -60vw;
 }
 
-.div-express-form{
-  position: absolute;
-  top: 40%;
-  left: 35%;
+a {
+  font-family: "Poppins", sans-serif;
 }
 
-a{
-  font-family: 'Poppins', sans-serif;
+@media only screen and (max-width: 425px) {
+  .main-window {
+    justify-content: space-around;
+  }
+  .div-express-form {
+    margin-left: -85vw;
+  }
 }
