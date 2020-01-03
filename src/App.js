@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
 import "./App.css";
+import React, { useState, useEffect } from "react";
 import useCustomFetch from "./hooks/useCustomFetch"; //custom hook
-
 import { useSelector, useDispatch } from "react-redux"; //for state management
 import { getFilms, getPeople, getLocations } from "./actions"; //actions
 
@@ -19,24 +18,24 @@ import SideDrawer from "./Components/SideDrawer/SideDrawer";
 // const locationsUrl = "https://ghibli-api-tse.herokuapp.com/locations";
 
 function App() {
-  useEffect(() => {
-    getData("films");
-    dispatch(getFilms(data));
-  }, []);
-  // useEffect(() => {
-  //   getData("people");
-  //   dispatch(getPeople(data));
-  // }, []);
-  // useEffect(() => getData("locations"), []);
+  const retrievedData = useSelector(state => state.reducer);
+
   const [url, setUrl] = useState(null);
   const [data, loading, error] = useCustomFetch(url);
-
-  const retrievedData = useSelector(state => state.reducer);
 
   const dispatch = useDispatch();
 
   function getData(endpoint) {
     setUrl(`https://ghibli-api-tse.herokuapp.com/${endpoint}`);
+    if (endpoint === "films") {
+      dispatch(getFilms(data));
+    }
+    if (endpoint === "people") {
+      dispatch(getPeople(data));
+    }
+    if (endpoint === "locations") {
+      dispatch(getLocations(data));
+    }
   }
 
   // constructor(props) {
@@ -205,9 +204,10 @@ function App() {
 
   return (
     <div>
-      <button onClick={() => getData("films")}>click</button>
+      <button onClick={() => getData("films")}>get films</button>
+      <button onClick={() => getData("people")}>get people</button>
+      <button onClick={() => getData("locations")}>get locations</button>
       {loading && url && <div>loading</div>}
-      <div>{data ? data[1].title : "hello"}</div>
 
       <div style={{ height: "100%" }}>
         {/* <Toolbar drawerClickHandler={this.drawerToggleClickHandler} /> */}
