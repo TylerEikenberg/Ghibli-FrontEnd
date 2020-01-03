@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import useCustomFetch from "./hooks/useCustomFetch"; //custom hook
 
@@ -19,6 +19,15 @@ import SideDrawer from "./Components/SideDrawer/SideDrawer";
 // const locationsUrl = "https://ghibli-api-tse.herokuapp.com/locations";
 
 function App() {
+  useEffect(() => {
+    getData("films");
+    dispatch(getFilms(data));
+  }, []);
+  // useEffect(() => {
+  //   getData("people");
+  //   dispatch(getPeople(data));
+  // }, []);
+  // useEffect(() => getData("locations"), []);
   const [url, setUrl] = useState(null);
   const [data, loading, error] = useCustomFetch(url);
 
@@ -28,7 +37,6 @@ function App() {
 
   function getData(endpoint) {
     setUrl(`https://ghibli-api-tse.herokuapp.com/${endpoint}`);
-    dispatch(getFilms(data));
   }
 
   // constructor(props) {
