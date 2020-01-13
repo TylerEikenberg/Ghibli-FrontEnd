@@ -1,64 +1,15 @@
 * {
   box-sizing: border-box;
-}
-.app-header {
-  z-index: 1;
-  width: 100vw;
-  height: 100px;
-  background-color: black;
-  text-align: center;
-  position: fixed;
-  left: 0;
-  top: 0;
-}
-.app-footer {
-  z-index: 1;
-  width: 100vw;
-  height: 100px;
-  background-color: black;
-  text-align: center;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-}
-.app-text {
-  color: white;
-  font-size: 16px;
-  text-decoration: none;
-}
-a {
-  padding: 0 1rem;
-  text-decoration: none;
-}
-a:hover {
-  color: burlywood;
-  text-decoration: none;
+  margin: 0;
+  padding: 0;
 }
 
-.main-window {
+.App-header {
   display: flex;
-  justify-content: space-between;
-  height: 100vh;
+  justify-content: center;
+  align-items: center;
   width: 100vw;
-  background-image: url("./assets/ghiblibg1.jpg");
-  background-size: cover;
-}
-
-.div-express-form {
-  position: absolute;
-  margin-top: 30vh;
-  margin-left: -60vw;
-}
-
-a {
-  font-family: "Poppins", sans-serif;
-}
-
-@media only screen and (max-width: 425px) {
-  .main-window {
-    justify-content: space-around;
-  }
-  .div-express-form {
-    margin-left: -85vw;
-  }
+  height: 100px;
+  background-color: #000;
+  color: #fff;
 }

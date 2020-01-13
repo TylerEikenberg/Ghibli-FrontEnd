@@ -21,7 +21,7 @@ function FilmsPage() {
     };
     fetchData();
   });
-  return <div></div>;
+  return <div>filmspage</div>;
 }
 
 export default FilmsPage;
