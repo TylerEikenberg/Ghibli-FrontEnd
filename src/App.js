@@ -1,8 +1,6 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import useCustomFetch from "./hooks/useCustomFetch"; //custom hook
-import { useSelector, useDispatch } from "react-redux"; //for state management
-import { getFilms, getPeople, getLocations } from "./actions"; //actions
 
 // import InfoBox from "./Components/InfoBox/InfoBox";
 // import Toolbar from "./Components/Toolbar/Toolbar";
@@ -18,24 +16,11 @@ import SideDrawer from "./Components/SideDrawer/SideDrawer";
 // const locationsUrl = "https://ghibli-api-tse.herokuapp.com/locations";
 
 function App() {
-  const retrievedData = useSelector(state => state.reducer);
-
   const [url, setUrl] = useState(null);
   const [data, loading, error] = useCustomFetch(url);
 
-  const dispatch = useDispatch();
-
   function getData(endpoint) {
     setUrl(`https://ghibli-api-tse.herokuapp.com/${endpoint}`);
-    if (endpoint === "films") {
-      dispatch(getFilms(data));
-    }
-    if (endpoint === "people") {
-      dispatch(getPeople(data));
-    }
-    if (endpoint === "locations") {
-      dispatch(getLocations(data));
-    }
   }
 
   // constructor(props) {
