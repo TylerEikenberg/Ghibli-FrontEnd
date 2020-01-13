@@ -1,0 +1,8 @@
+.FilmsPage-films-buttons-container {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid black;
+  height: 80vh;
+  overflow: scroll;
+  padding-right: 10px;
+}
