@@ -1,3 +1,8 @@
+.FilmsPage-page-container {
+  display: flex;
+  border: 2px solid red;
+  width: 95vw;
+}
 .FilmsPage-films-buttons-container {
   display: flex;
   flex-direction: column;
@@ -5,4 +10,16 @@
   height: 80vh;
   overflow: scroll;
   padding-right: 10px;
+  margin-top: 5vh;
+}
+
+.FilmsPage-film-title {
+  font-size: calc(10px + 3vmin);
+  text-align: left;
+}
+.FilmsPage-film-details {
+  font-size: calc(10px + 2vmin);
+}
+.FilmsPage-hrline {
+  border-color: #000;
 }

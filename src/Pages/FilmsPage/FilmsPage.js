@@ -1,4 +1,4 @@
-import { DataButton } from "../../Components/";
+import { DataButton, DataDisplay } from "../../Components/";
 import React, { useEffect, useState } from "react";
 import "./FilmsPage.css";
 const axios = require("axios");
@@ -30,7 +30,7 @@ function FilmsPage() {
   };
 
   return (
-    <div>
+    <div className="FilmsPage-page-container">
       <ul className="FilmsPage-films-buttons-container">
         {films.map(item => {
           return (
@@ -42,6 +42,18 @@ function FilmsPage() {
           );
         })}
       </ul>
+      <DataDisplay>
+        <h1 className="FilmsPage-film-title">{currentFilm.title}</h1>
+        <h1 className="FilmsPage-film-details">{currentFilm.release_date}</h1>
+        <h3 className="FilmsPage-film-details">
+          Directed By {currentFilm.director}
+        </h3>
+        <h3 className="FilmsPage-film-details">
+          Produced By {currentFilm.producer}
+        </h3>
+        <hr className="FilmsPage-hrline" />
+        <h2 className="FilmsPage-film-details">{currentFilm.description}</h2>
+      </DataDisplay>
     </div>
   );
 }
