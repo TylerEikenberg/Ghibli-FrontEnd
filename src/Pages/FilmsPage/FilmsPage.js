@@ -5,6 +5,7 @@ function FilmsPage() {
   const [films, setFilms] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [currentFilm, setCurrentFilm] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,8 +21,19 @@ function FilmsPage() {
       }
     };
     fetchData();
-  });
-  return <div>filmspage</div>;
+  }, []);
+
+  console.log(films);
+
+  return (
+    <div>
+      <ul>
+        {films.map(item => {
+          return <li key={item.title}>{item.title}</li>;
+        })}
+      </ul>
+    </div>
+  );
 }
 
 export default FilmsPage;

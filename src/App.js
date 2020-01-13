@@ -6,7 +6,7 @@ import { FilmsPage } from "./Pages/";
 function App() {
   return (
     <BrowserRouter>
-      <div>
+      <div className="App-body">
         <header className="App-header">Hello header</header>
         <Route path="/" exact component={FilmsPage}></Route>
       </div>
