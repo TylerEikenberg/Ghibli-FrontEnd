@@ -1,0 +1,16 @@
+.DataButton-wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 40vw;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: burlywood;
+  color: #fff;
+  margin-top: 5px;
+  cursor: pointer;
+}
+.DataButton-wrapper:hover {
+  background-color: rgb(174, 144, 106);
+  cursor: pointer;
+}

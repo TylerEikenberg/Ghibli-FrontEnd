@@ -1,11 +1,13 @@
+import { DataButton } from "../../Components/";
 import React, { useEffect, useState } from "react";
+import "./FilmsPage.css";
 const axios = require("axios");
 
 function FilmsPage() {
   const [films, setFilms] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [currentFilm, setCurrentFilm] = useState(null);
+  const [currentFilm, setCurrentFilm] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,13 +25,21 @@ function FilmsPage() {
     fetchData();
   }, []);
 
-  console.log(films);
+  const filmClickHandle = data => {
+    setCurrentFilm(data);
+  };
 
   return (
     <div>
-      <ul>
+      <ul className="FilmsPage-films-buttons-container">
         {films.map(item => {
-          return <li key={item.title}>{item.title}</li>;
+          return (
+            <DataButton
+              key={item.title}
+              data={item}
+              clickHandle={filmClickHandle}
+            />
+          );
         })}
       </ul>
     </div>
