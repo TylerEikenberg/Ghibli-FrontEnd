@@ -1,7 +1,7 @@
 import "./App.css";
 import React from "react";
 import { BrowserRouter, NavLink, Route } from "react-router-dom";
-import { FilmsPage, CharactersPage } from "./Pages/";
+import { FilmsPage, CharactersPage, LocationsPage } from "./Pages/";
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
         </header>
         <Route path="/films" exact component={FilmsPage}></Route>
         <Route path="/characters" exact component={CharactersPage}></Route>
-        <Route path="/locations" exact component={FilmsPage}></Route>
+        <Route path="/locations" exact component={LocationsPage}></Route>
       </div>
     </BrowserRouter>
   );
