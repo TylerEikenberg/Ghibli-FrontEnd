@@ -36,6 +36,7 @@ function CharactersPage() {
   const charClickHandle = data => {
     setCurrentCharacter(data);
   };
+
   const deleteClickHandle = () => {
     axios
       .delete(
@@ -53,11 +54,16 @@ function CharactersPage() {
       });
   };
 
-  const submitCharHandle = () => {
+  const submitCharHandle = async e => {
+    e.preventDefault();
+    setLoading(true);
     axios
       .post("https://ghibli-api-tse.herokuapp.com/people/create", {
         name: charName,
-        gender: "ha"
+        gender: ""
+      })
+      .then(() => {
+        setLoading(false);
       })
       .catch(error => {
         console.log(error);
