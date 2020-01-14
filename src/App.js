@@ -20,6 +20,7 @@ function App() {
             </NavLink>
           </ul>
         </header>
+        <h1 className="App-site-title">Studio Ghibli Film Database</h1>
         <Route path="/films" exact component={FilmsPage}></Route>
         <Route path="/characters" exact component={CharactersPage}></Route>
         <Route path="/locations" exact component={LocationsPage}></Route>
