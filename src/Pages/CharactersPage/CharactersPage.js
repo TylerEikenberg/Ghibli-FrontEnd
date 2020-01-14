@@ -8,10 +8,12 @@ function CharactersPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [currentCharacter, setCurrentCharacter] = useState([]);
+  const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
+      setDeleting(false);
       try {
         const result = await axios(
           "https://ghibli-api-tse.herokuapp.com/people"
@@ -23,7 +25,7 @@ function CharactersPage() {
       }
     };
     fetchData();
-  }, []);
+  }, [deleting]);
 
   const charClickHandle = data => {
     setCurrentCharacter(data);
@@ -36,9 +38,11 @@ function CharactersPage() {
       )
       .then(response => {
         console.log(response);
+        setDeleting(true);
       })
       .catch(error => {
         console.log(error);
+        setDeleting(true);
       });
   };
 
