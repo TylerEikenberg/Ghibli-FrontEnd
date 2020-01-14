@@ -39,6 +39,7 @@ function CharactersPage() {
       .then(response => {
         console.log(response);
         setDeleting(true);
+        setCurrentCharacter(characters[0]);
       })
       .catch(error => {
         console.log(error);
