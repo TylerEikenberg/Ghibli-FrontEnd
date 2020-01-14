@@ -1,6 +1,7 @@
 .CharacterPage-page-container {
+  margin-top: 4vh;
   display: flex;
-  border: 2px solid red;
+  justify-content: center;
   width: 95vw;
 }
 .CharacterPage-chars-buttons-container {
@@ -10,7 +11,7 @@
   height: 80vh;
   overflow: scroll;
   padding-right: 10px;
-  margin-top: 5vh;
+  /* margin-top: 5vh; */
 }
 .CharacterPage-char-name {
   font-size: calc(10px + 3vmin);

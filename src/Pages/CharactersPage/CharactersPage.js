@@ -3,6 +3,11 @@ import React, { useEffect, useState } from "react";
 import { DataButton, DataDisplay } from "../../Components/";
 const axios = require("axios");
 
+/**
+ * add way to update characters name
+ * add way to add character
+ */
+
 function CharactersPage() {
   const [characters, setCharacters] = useState([]);
   const [loading, setLoading] = useState(false);

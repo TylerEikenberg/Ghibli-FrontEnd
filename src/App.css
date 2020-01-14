@@ -15,7 +15,9 @@
 }
 
 .App-body {
-  background-color: var(--bg-color);
+  background-image: url("./assets/ghiblibg1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
