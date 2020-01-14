@@ -7,10 +7,12 @@
 .FilmsPage-films-buttons-container {
   display: flex;
   flex-direction: column;
-  border: 3px solid black;
+  border: 3px solid rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
   height: 60vh;
   overflow: scroll;
   padding-right: 10px;
+  font-family: var(--font);
 }
 
 .FilmsPage-film-title {
@@ -18,8 +20,10 @@
   text-align: left;
 }
 .FilmsPage-film-details {
+  margin-top: 1vh;
   font-size: calc(10px + 2vmin);
 }
 .FilmsPage-hrline {
+  margin-top: 3vh;
   border-color: #000;
 }
