@@ -15,7 +15,6 @@ function CharactersPage() {
   const [currentCharacter, setCurrentCharacter] = useState([]);
   const [deleting, setDeleting] = useState(false);
   const [charName, setCharName] = useState("Name");
-  const [submitName, setSubmitName] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -57,7 +56,8 @@ function CharactersPage() {
   const submitCharHandle = () => {
     axios
       .post("https://ghibli-api-tse.herokuapp.com/people/create", {
-        name: submitName
+        name: charName,
+        gender: "ha"
       })
       .catch(error => {
         console.log(error);
