@@ -13,13 +13,14 @@ function CharactersPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [currentCharacter, setCurrentCharacter] = useState([]);
-  const [deleting, setDeleting] = useState(false);
+  const [fetching, setFetching] = useState(false);
   const [charName, setCharName] = useState("Name");
+  const [editing, setEditing] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
-      setDeleting(false);
+      setFetching(false);
       try {
         const result = await axios(
           "https://ghibli-api-tse.herokuapp.com/people"
@@ -31,7 +32,7 @@ function CharactersPage() {
       }
     };
     fetchData();
-  }, [deleting]);
+  }, [fetching]);
 
   const charClickHandle = data => {
     setCurrentCharacter(data);
@@ -45,12 +46,12 @@ function CharactersPage() {
       )
       .then(response => {
         console.log(response);
-        setDeleting(true);
+        setFetching(true);
         setCurrentCharacter(characters[0]);
       })
       .catch(error => {
         console.log(error);
-        setDeleting(true);
+        setFetching(true);
       });
   };
 
@@ -63,11 +64,17 @@ function CharactersPage() {
         gender: ""
       })
       .then(() => {
-        setLoading(false);
+        setFetching(true);
+        setCurrentCharacter(characters[characters.length - 1]);
       })
       .catch(error => {
-        console.log(error);
+        setFetching(true);
       });
+  };
+
+  const editCharHandle = async e => {
+    e.preventDefault();
+    setEditing(true);
   };
 
   return (
@@ -86,12 +93,22 @@ function CharactersPage() {
           })}
         </ul>
         <DataDisplay>
-          <h1 className="CharacterPage-char-name">{currentCharacter.name}</h1>
+          {editing ? (
+            <input type="text" placeholder="hi" value={currentCharacter.name} />
+          ) : (
+            <h1 className="CharacterPage-char-name">{currentCharacter.name}</h1>
+          )}
           <button
             onClick={deleteClickHandle}
             className="CharactersPage-delete-btn"
           >
             Delete
+          </button>
+          <button
+            onClick={editCharHandle}
+            className="CharactersPage-delete-btn"
+          >
+            Edit
           </button>
         </DataDisplay>
       </div>
