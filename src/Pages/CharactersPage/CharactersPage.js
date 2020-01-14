@@ -6,8 +6,7 @@ import { DataButton, DataDisplay } from "../../Components/";
 const axios = require("axios");
 
 /**
- * add way to update characters name
- * add way to add character
+ * style everything so it looks cool
  */
 
 function CharactersPage() {
