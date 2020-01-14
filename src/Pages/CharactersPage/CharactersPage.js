@@ -41,7 +41,7 @@ function CharactersPage() {
   const deleteClickHandle = () => {
     axios
       .delete(
-        `https://ghibli-api-tse.herokuapp.com/people/delete/${currentCharacter.id}`,
+        `https://ghibli-api-tse.herokuapp.com/people/delete/${currentCharacter._id}`,
         { currentCharacter }
       )
       .then(response => {
