@@ -16,7 +16,6 @@
   height: 60vh;
   overflow: scroll;
   padding-right: 10px;
-  /* margin-top: 5vh; */
 }
 .CharacterPage-char-name {
   font-size: calc(10px + 3vmin);
@@ -27,7 +26,6 @@
   bottom: 0;
   position: absolute;
   display: flex;
-
   justify-content: space-around;
 }
 .CharactersPage-btn {

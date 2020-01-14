@@ -45,13 +45,12 @@ function CharactersPage() {
         `https://ghibli-api-tse.herokuapp.com/people/delete/${currentCharacter._id}`,
         { currentCharacter }
       )
-      .then(response => {
-        console.log(response);
+      .then(() => {
         setFetching(true);
         setCurrentCharacter(characters[0]);
       })
       .catch(error => {
-        console.log(error);
+        setError(error);
         setFetching(true);
       });
   };
@@ -67,8 +66,10 @@ function CharactersPage() {
       .then(() => {
         setFetching(true);
         setCurrentCharacter(characters[characters.length - 1]);
+        setCharName("Name");
       })
       .catch(error => {
+        setError(error);
         setFetching(true);
       });
   };
