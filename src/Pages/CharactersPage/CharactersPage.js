@@ -28,6 +28,19 @@ function CharactersPage() {
   const charClickHandle = data => {
     setCurrentCharacter(data);
   };
+  const deleteClickHandle = () => {
+    axios
+      .delete(
+        `https://ghibli-api-tse.herokuapp.com/people/delete/${currentCharacter.id}`,
+        { currentCharacter }
+      )
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
 
   return (
     <div className="CharacterPage-page-container">
@@ -45,7 +58,12 @@ function CharactersPage() {
       </ul>
       <DataDisplay>
         <h1 className="CharacterPage-char-name">{currentCharacter.name}</h1>
-        <button className="CharactersPage-delete-btn">Delete</button>
+        <button
+          onClick={deleteClickHandle}
+          className="CharactersPage-delete-btn"
+        >
+          Delete
+        </button>
       </DataDisplay>
     </div>
   );
