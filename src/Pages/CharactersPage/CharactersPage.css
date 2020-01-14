@@ -51,4 +51,56 @@
   justify-content: center;
   align-items: center;
   font-family: var(--font);
+  margin-top: 3vh;
+}
+.Char-form-label {
+  color: #fff;
+}
+.Char-form-input {
+  margin-top: 1vh;
+  font-size: calc(10px + 1vmin);
+}
+.Char-form-submit {
+  margin-top: 1vh;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--button-color);
+  padding: 5px;
+  color: #fff;
+  font-size: calc(10px + 1vmin);
+}
+
+@media only screen and (min-width: 1024px) {
+  .CharacterPage-page-container {
+    margin-top: 12vh;
+    width: 60vw;
+  }
+  .CharacterPage-chars-buttons-container {
+    height: 45vh;
+  }
+  .CharPage-btns-container {
+    right: 1vw;
+    bottom: 8vh;
+  }
+  .CharactersPage-btn {
+    transition: transform 0.5s;
+    cursor: pointer;
+  }
+  .CharactersPage-btn:hover {
+    transform: scale(1.1);
+  }
+  .Char-form-submit {
+    margin-top: 1vh;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--button-color);
+    padding: 8px;
+    color: #fff;
+    font-size: calc(10px + 1vmin);
+    transition: background-color 0.2s, color 0.2s;
+  }
+  .Char-form-submit:hover {
+    background-color: var(--button-hover);
+    color: #000;
+  }
 }

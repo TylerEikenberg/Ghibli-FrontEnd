@@ -9,8 +9,9 @@
   color: #fff;
   margin-top: 1px;
   cursor: pointer;
+  transition: background-color 0.3s, color 0.2s;
 }
 .DataButton-wrapper:hover {
-  background-color: rgb(174, 144, 106);
-  cursor: pointer;
+  background-color: var(--button-hover);
+  color: #000;
 }

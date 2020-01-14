@@ -27,3 +27,13 @@
   margin-top: 3vh;
   border-color: #000;
 }
+
+@media only screen and (min-width: 1024px) {
+  .FilmsPage-page-container {
+    margin-top: 12vh;
+    width: 60vw;
+  }
+  .FilmsPage-films-buttons-container {
+    height: 45vh;
+  }
+}

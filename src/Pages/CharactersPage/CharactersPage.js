@@ -153,14 +153,20 @@ function CharactersPage() {
       </div>
 
       <form onSubmit={submitCharHandle} className="CharPage-create-form">
-        <label>Create Character</label>
+        <label className="Char-form-label">Create Character</label>
         <input
+          className="Char-form-input"
           type="text"
           placeholder="Name"
           value={charName}
           onChange={e => setCharName(e.target.value)}
         />
-        <input type="submit" placeholder="Create" value="Submit" />
+        <input
+          className="Char-form-submit"
+          type="submit"
+          placeholder="Create"
+          value="Submit"
+        />
       </form>
     </div>
   );

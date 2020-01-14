@@ -9,3 +9,9 @@
   width: 50vw;
   background-color: var(--alabaster);
 }
+
+@media only screen and (min-width: 1024px) {
+  .DataDisplay-container {
+    height: 45vh;
+  }
+}

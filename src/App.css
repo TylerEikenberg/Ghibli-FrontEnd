@@ -9,7 +9,7 @@
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 100px;
+  height: 60px;
   background-color: #000;
   color: #fff;
 }
@@ -30,4 +30,35 @@
   display: flex;
   justify-content: space-between;
   width: 90vw;
+}
+
+.App-footer {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 60px;
+  background-color: #000;
+  color: #fff;
+}
+.App-link {
+  text-decoration: none;
+  color: #fff;
+  font-size: calc(10px + 1vmin);
+}
+.App-link:hover {
+  color: var(--button-color);
+}
+
+@media only screen and (min-width: 1024px) {
+  .App-header {
+    height: 100px;
+  }
+  .App-header-links {
+    display: flex;
+    justify-content: space-between;
+    width: 50vw;
+  }
 }
