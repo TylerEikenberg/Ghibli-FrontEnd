@@ -35,9 +35,8 @@
   height: 60px;
   border-radius: 50%;
   border: 3px solid var(--button-color);
-  background-color: none;
-  margin-top: 5px;
-  margin-right: 1vw;
+  background-color: transparent;
+  margin: 5px 1vw 5px 0;
 }
 .CharPage-create-btn {
   width: 25vw;

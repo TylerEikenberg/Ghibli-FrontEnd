@@ -1,3 +1,5 @@
+import Icon from "@mdi/react";
+import { mdiTrashCanOutline, mdiSquareEditOutline } from "@mdi/js";
 import "./CharactersPage.css";
 import React, { useEffect, useState } from "react";
 import { DataButton, DataDisplay } from "../../Components/";
@@ -131,10 +133,20 @@ function CharactersPage() {
           )}
           <div className="CharPage-btns-container">
             <button onClick={deleteClickHandle} className="CharactersPage-btn">
-              delete
+              <Icon
+                className="icon"
+                path={mdiTrashCanOutline}
+                size={1.7}
+                color="#e88d67"
+              />
             </button>
             <button onClick={setEditable} className="CharactersPage-btn">
-              edit
+              <Icon
+                className="icon"
+                path={mdiSquareEditOutline}
+                size={1.5}
+                color="#e88d67"
+              />
             </button>
           </div>
         </DataDisplay>
