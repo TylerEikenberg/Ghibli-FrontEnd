@@ -4,7 +4,7 @@ import "./DataButton.css";
 function DataButton({ data = [], clickHandle = null }) {
   return (
     <div onClick={() => clickHandle(data)} className="DataButton-wrapper">
-      {data.title}
+      {data.title || data.name}
     </div>
   );
 }

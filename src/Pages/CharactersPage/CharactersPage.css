@@ -1,0 +1,22 @@
+.CharacterPage-page-container {
+  display: flex;
+  border: 2px solid red;
+  width: 95vw;
+}
+.CharacterPage-chars-buttons-container {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid black;
+  height: 80vh;
+  overflow: scroll;
+  padding-right: 10px;
+  margin-top: 5vh;
+}
+.CharacterPage-char-name {
+  font-size: calc(10px + 3vmin);
+  text-align: left;
+}
+.CharactersPage-delete-btn {
+  width: 25vw;
+  border: 1px solid black;
+}

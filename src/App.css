@@ -23,3 +23,9 @@
   font-size: calc(10px + 2vmin);
   padding-bottom: 10vh;
 }
+
+.App-header-links {
+  display: flex;
+  justify-content: space-between;
+  width: 90vw;
+}

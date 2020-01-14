@@ -31,6 +31,7 @@ function FilmsPage() {
 
   return (
     <div className="FilmsPage-page-container">
+      <h1>{loading ? "Loading" : null}</h1>
       <ul className="FilmsPage-films-buttons-container">
         {films.map(item => {
           return (
