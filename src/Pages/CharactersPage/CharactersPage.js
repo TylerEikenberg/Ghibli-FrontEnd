@@ -85,7 +85,7 @@ function CharactersPage() {
 
     axios
       .put(
-        `https://ghibli-api-tse.herokuapp.com/people/update/${currentCharacter.id}`,
+        `https://ghibli-api-tse.herokuapp.com/people/update/${currentCharacter._id}`,
         { name: charName }
       )
       .then(() => {
