@@ -14,6 +14,8 @@ function CharactersPage() {
   const [error, setError] = useState("");
   const [currentCharacter, setCurrentCharacter] = useState([]);
   const [deleting, setDeleting] = useState(false);
+  const [charName, setCharName] = useState("Name");
+  const [submitName, setSubmitName] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -52,29 +54,52 @@ function CharactersPage() {
       });
   };
 
+  const submitCharHandle = () => {
+    axios
+      .post("https://ghibli-api-tse.herokuapp.com/people/create", {
+        name: submitName
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
   return (
     <div className="CharacterPage-page-container">
       <h1>{loading ? "Loading" : null}</h1>
-      <ul className="CharacterPage-chars-buttons-container">
-        {characters.map(item => {
-          return (
-            <DataButton
-              key={item.title}
-              data={item}
-              clickHandle={charClickHandle}
-            />
-          );
-        })}
-      </ul>
-      <DataDisplay>
-        <h1 className="CharacterPage-char-name">{currentCharacter.name}</h1>
-        <button
-          onClick={deleteClickHandle}
-          className="CharactersPage-delete-btn"
-        >
-          Delete
-        </button>
-      </DataDisplay>
+      <div className="CharPage-chars-infobox-container">
+        <ul className="CharacterPage-chars-buttons-container">
+          {characters.map(item => {
+            return (
+              <DataButton
+                key={item.title}
+                data={item}
+                clickHandle={charClickHandle}
+              />
+            );
+          })}
+        </ul>
+        <DataDisplay>
+          <h1 className="CharacterPage-char-name">{currentCharacter.name}</h1>
+          <button
+            onClick={deleteClickHandle}
+            className="CharactersPage-delete-btn"
+          >
+            Delete
+          </button>
+        </DataDisplay>
+      </div>
+
+      <form onSubmit={submitCharHandle} className="CharPage-create-form">
+        <label>Create Character</label>
+        <input
+          type="text"
+          placeholder="Name"
+          value={charName}
+          onChange={e => setCharName(e.target.value)}
+        />
+        <input type="submit" placeholder="Create" value="Submit" />
+      </form>
     </div>
   );
 }
