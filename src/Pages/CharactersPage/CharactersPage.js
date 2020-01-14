@@ -72,9 +72,34 @@ function CharactersPage() {
       });
   };
 
-  const editCharHandle = async e => {
+  const setEditable = async e => {
     e.preventDefault();
     setEditing(true);
+    setCharName(currentCharacter.name);
+  };
+
+  const updateCharHandle = e => {
+    e.preventDefault();
+
+    axios
+      .put(
+        `https://ghibli-api-tse.herokuapp.com/people/update/${currentCharacter.id}`,
+        { name: charName }
+      )
+      .then(() => {
+        setFetching(true);
+        setCurrentCharacter(characters[characters.length - 1]);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
+  const keyPressHandle = e => {
+    if (e.key === "Enter") {
+      updateCharHandle(e);
+      setEditing(!editing);
+    }
   };
 
   return (
@@ -94,7 +119,13 @@ function CharactersPage() {
         </ul>
         <DataDisplay>
           {editing ? (
-            <input type="text" placeholder="hi" value={currentCharacter.name} />
+            <input
+              onKeyPress={keyPressHandle}
+              type="text"
+              placeholder="hi"
+              value={charName}
+              onChange={e => setCharName(e.target.value)}
+            />
           ) : (
             <h1 className="CharacterPage-char-name">{currentCharacter.name}</h1>
           )}
@@ -104,10 +135,7 @@ function CharactersPage() {
           >
             Delete
           </button>
-          <button
-            onClick={editCharHandle}
-            className="CharactersPage-delete-btn"
-          >
+          <button onClick={setEditable} className="CharactersPage-delete-btn">
             Edit
           </button>
         </DataDisplay>
