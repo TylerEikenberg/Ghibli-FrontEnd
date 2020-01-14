@@ -1,4 +1,10 @@
-html{
+:root {
+  --alabaster: #eff8e2b6;
+  --button-color-clear: #e88e67e5;
+  --button-color: #e88d67;
+}
+
+html {
   height: 100%;
 }
 

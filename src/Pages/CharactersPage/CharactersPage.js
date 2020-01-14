@@ -129,15 +129,14 @@ function CharactersPage() {
           ) : (
             <h1 className="CharacterPage-char-name">{currentCharacter.name}</h1>
           )}
-          <button
-            onClick={deleteClickHandle}
-            className="CharactersPage-delete-btn"
-          >
-            Delete
-          </button>
-          <button onClick={setEditable} className="CharactersPage-delete-btn">
-            Edit
-          </button>
+          <div className="CharPage-btns-container">
+            <button onClick={deleteClickHandle} className="CharactersPage-btn">
+              delete
+            </button>
+            <button onClick={setEditable} className="CharactersPage-btn">
+              edit
+            </button>
+          </div>
         </DataDisplay>
       </div>
 

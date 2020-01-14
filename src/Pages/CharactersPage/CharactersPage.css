@@ -22,9 +22,22 @@
   font-size: calc(10px + 3vmin);
   text-align: left;
 }
-.CharactersPage-delete-btn {
-  width: 25vw;
-  border: 1px solid black;
+.CharPage-btns-container {
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  display: flex;
+
+  justify-content: space-around;
+}
+.CharactersPage-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid var(--button-color);
+  background-color: none;
+  margin-top: 5px;
+  margin-right: 1vw;
 }
 .CharPage-create-btn {
   width: 25vw;

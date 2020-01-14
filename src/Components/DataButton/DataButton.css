@@ -5,7 +5,7 @@
   border: 1px solid black;
   border-radius: 5px;
   padding: 20px;
-  background-color: burlywood;
+  background-color: var(--button-color-clear);
   color: #fff;
   margin-top: 1px;
   cursor: pointer;
